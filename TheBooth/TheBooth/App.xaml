@@ -4,4 +4,13 @@
                         xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
                         x:Class="TheBooth.App">
 
+  <Application.Resources>
+    <ResourceDictionary>
+  <Style TargetType="NavigationPage">
+    <Setter Property="BarBackgroundColor" Value="Color.White"/>
+    <!--<Setter Property="BarTintColor" Value="#FF0080FF"/>
+    <Setter Property="BarTextColor" Value="Color.White"/>-->
+  </Style>
+    </ResourceDictionary>
+  </Application.Resources>
 </prism:PrismApplication>

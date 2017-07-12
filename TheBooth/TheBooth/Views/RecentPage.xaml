@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:controls="clr-namespace:TheBooth.Common;assembly=TheBooth"
              x:Class="TheBooth.Views.RecentPage"
              Icon="home.png"
              >
@@ -12,10 +13,10 @@
       <DataTemplate x:Key="ImageTextListCollectionTemplate" >
         <ViewCell>
           <StackLayout  Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-            <StackLayout BackgroundColor="White" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="Start" Padding="20,10,20,0">
+            <StackLayout  Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="Start" Padding="20,10,20,0">
               <StackLayout Orientation="Horizontal">
                 <StackLayout Padding="0,5,0,0">
-                  <Image  Source="icon.png" WidthRequest="20" HeightRequest="20" />
+                  <Image  Source="tunedin.png" WidthRequest="20" HeightRequest="20" />
                 </StackLayout>
                 <Label Text="{Binding Title}" HorizontalOptions="Start" TextColor="Black" FontSize="20"   LineBreakMode="NoWrap"/>
                 <!--<Label Text="{Binding TransactionAmount}" FontSize="20" TextColor="Black" HorizontalOptions="EndAndExpand"  LineBreakMode="NoWrap"/>-->
@@ -27,11 +28,11 @@
               </StackLayout>
               <StackLayout Orientation="Horizontal">
                 <StackLayout>
-                  <Label Text="{Binding Description}" HorizontalOptions="Start" FontSize="12"   />
+                  <controls:MultiLineLabel Text="{Binding Description}" HorizontalOptions="Start" FontSize="12" LineBreakMode="TailTruncation" />
                 </StackLayout>
               </StackLayout>
               <StackLayout Orientation="Horizontal">
-                <Image  Source="pin.png" WidthRequest="15" HeightRequest="15" />
+                <Image  Source="location.png" WidthRequest="18" HeightRequest="18" />
                 <StackLayout Orientation="Horizontal">
                   <StackLayout>
                     <Label Text="{Binding Location}" HorizontalOptions="Start" FontSize="12"   LineBreakMode="NoWrap"/>
@@ -41,18 +42,17 @@
                 <Label Text="{Binding DueDate}" HorizontalOptions="Start" FontSize="12"   LineBreakMode="NoWrap"/>
                 <!--<Label TextColor="Green"  Text="{Binding TransactionDate, Converter={StaticResource DateToTextConverter}}" HorizontalOptions="EndAndExpand" FontSize="12"/>-->
               </StackLayout>
-              <StackLayout BackgroundColor="White" Orientation="Horizontal">
-                <Image  Source="pin.png" WidthRequest="15" HeightRequest="15" />
+              <StackLayout HorizontalOptions="End" Orientation="Horizontal">
                 <StackLayout  Orientation="Horizontal">
                   <StackLayout >
-                    <Label Text="67 Subscribers" HorizontalOptions="Start" FontSize="20" FontAttributes="Bold"  LineBreakMode="NoWrap"/>
+                  <Image  Source="tunedin.png"  />
                   </StackLayout>
                 </StackLayout>
 
                 <Label Text="|" HorizontalOptions="Start" FontSize="20" FontAttributes="Bold"  LineBreakMode="NoWrap"/>
                 <StackLayout Orientation="Horizontal">
                   <StackLayout>
-                    <Label Text="3 Comments" HorizontalOptions="Start" FontSize="20" FontAttributes="Bold"  LineBreakMode="NoWrap"/>
+                <Image  Source="comment.png"   />
                   </StackLayout>
                 </StackLayout>
               </StackLayout>
@@ -62,13 +62,13 @@
       </DataTemplate>
     </ResourceDictionary>
   </ContentPage.Resources>
-  <StackLayout HeightRequest="950"  VerticalOptions="FillAndExpand"   Padding="0,20,0,20">
+  <StackLayout HeightRequest="1000"  VerticalOptions="FillAndExpand"   Padding="0,0,0,0">
     <!--<StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" IsVisible="{Binding NoTransactionsMessageVisible}" VerticalOptions="Start" Padding="20,10,0,0">
       <Label Text="No Trasactions Found" TextColor="Black" FontSize="30"  />
     </StackLayout>-->
     <StackLayout>
-      <ListView x:Name="ImageTextListCollectionGrid" RowHeight="400" VerticalOptions="StartAndExpand"
-                BackgroundColor="Gray"
+      <ListView x:Name="ImageTextListCollectionGrid" HeightRequest="1000" RowHeight="350" VerticalOptions="StartAndExpand"
+                
                     HorizontalOptions="FillAndExpand"
                     SelectedItem="{Binding SelectedBooth}"
                     SeparatorVisibility="Default"

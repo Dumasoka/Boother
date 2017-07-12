@@ -36,6 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Common\MultiLineLabel.cs" />
     <Compile Include="Common\PageAppearingBehavoir.cs" />
     <Compile Include="Core\Booth.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
